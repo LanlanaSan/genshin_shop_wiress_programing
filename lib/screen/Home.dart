@@ -7,30 +7,23 @@ class Homescreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const urlImage =
-        'https://genshindb.org/wp-content/uploads/2021/06/Genshin-Impact-1.6-Klee-Phone-Wallpaper.jpg';
-    //'https://i.redd.it/ek27c1hbido71.jpg';
-    //'https://pbs.twimg.com/media/Euj8EoRVcAMDa3B?format=jpg&name=small';
+    const urlImage = 'assets/Genshin-wallpaper.png';
 
     return Scaffold(
         appBar: AppBar(
           title: RichText(
               text: const TextSpan(children: [
             TextSpan(
-              text: 'GENSHIN \n',
+              text: 'GENSHIN SHOP',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28.0),
             ),
-            TextSpan(
-              text: '         shop',
-              style: TextStyle(fontSize: 18.0),
-            )
           ])),
           centerTitle: true,
         ),
         body: Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: NetworkImage(urlImage), fit: BoxFit.cover)),
+                    image: AssetImage(urlImage), fit: BoxFit.cover)),
             child: Padding(
               //padding of buttons
               padding: const EdgeInsets.fromLTRB(50, 30, 50, 0),

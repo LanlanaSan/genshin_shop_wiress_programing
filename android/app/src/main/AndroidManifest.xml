@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.authentification_test">
    <application
-        android:label="authentification_test"
+        android:label="Genshin Shop"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
