@@ -69,6 +69,7 @@ flutter:
      - assets/Genshin-logo.png
      - assets/Genshin-wallpaper.png
      - assets/Splashscreen.png
+     - assets/Wanderer_necklace.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

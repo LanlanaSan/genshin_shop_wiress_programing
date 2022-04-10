@@ -4,7 +4,6 @@ import 'package:authentification_test/afterLogin/product.dart';
 import 'package:authentification_test/afterLogin/wishlist.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class ProductScreen extends StatelessWidget {
   const ProductScreen({Key? key}) : super(key: key);
