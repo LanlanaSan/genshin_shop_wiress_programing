@@ -70,7 +70,12 @@ flutter:
      - assets/Genshin-wallpaper.png
      - assets/Splashscreen.png
      - assets/Wanderer_necklace.jpg
-  #   - images/a_dot_ham.jpeg
+     - assets/Bard_feather.jpg
+     - assets/RaidenShogunStandee.jpg
+     - assets/FinalHourRing.jpg
+     - assets/DilucLetter.jpg
+     - assets/KujouSara.jpg
+     - assets/kokomi.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

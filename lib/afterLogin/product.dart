@@ -29,7 +29,6 @@ class _productScreenState extends State<productScreen> {
                   ),
                 );
               },
-              // 11
               child: buildRecipeCard(Product.samples[index]),
             );
           },
@@ -38,69 +37,80 @@ class _productScreenState extends State<productScreen> {
     );
   }
 
-// TODO: Add buildRecipeCard() here
+//buildRecipeCard()
   Widget buildRecipeCard(Product product) {
     return Card(
-      // 1
       elevation: 2.0,
-      // 2
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-      // 3
       child: Padding(
         padding: const EdgeInsets.all(16.0),
-        // 4
-        child: Column(
-          children: <Widget>[
-            Image(
+        child: Column(children: <Widget>[
+          Image(
               image: AssetImage(product.Product_Img),
               fit: BoxFit.cover,
               height: 200,
-              width: 200,
+              width: 200),
+          const SizedBox(
+            height: 14.0,
+          ),
+          Text(
+            product.Product_Name,
+            style: const TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Lexend Deca',
             ),
-            // 5
-            const SizedBox(
-              height: 14.0,
-            ),
-            // 6
-            Text(
-              product.Product_Name,
-              style: const TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.w700,
-                fontFamily: 'Palatine',
+          ),
+          Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 5),
+                ////////////////ADD TO CART BUTTON//////////////
+                child: ElevatedButton.icon(
+                  icon: Icon(
+                    Icons.add_shopping_cart,
+                    color: Colors.white,
+                    size: 24.0,
+                  ),
+                  label: Text('Add to cart'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.blue,
+                    minimumSize: const Size.fromHeight(30),
+                    shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(10),
+                    ),
+                  ),
+                  onPressed: () {
+                    print('Button-Reserve pressed ...');
+                  },
+                ),
+                ////////////////////////////////////////////////
               ),
-            ),
-            Padding(padding: const EdgeInsets.all(5.0)),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.blue,
-                minimumSize: const Size.fromHeight(30),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                child: ElevatedButton.icon(
+                  icon: Icon(
+                    Icons.favorite_border,
+                    color: Colors.white,
+                    size: 24.0,
+                  ),
+                  label: Text('Wishlist'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.blue,
+                    minimumSize: const Size.fromHeight(30),
+                    shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(10),
+                    ),
+                  ),
+                  onPressed: () {
+                    print('Button-Reserve pressed ...');
+                  },
+                ),
               ),
-              onPressed: () {
-                /*
-              setState(() {
-                addToWishlist.add(Product.samples[index]);
-              });
-              */
-              },
-              child: Text('Add to wishlist'),
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.blue,
-                minimumSize: const Size.fromHeight(30),
-              ),
-              onPressed: () {
-                /*
-              setState(() {
-                addToWishlist.add(Product.samples[index]);
-              });
-              */
-              },
-              child: Text('Add to cart'),
-            ),
-          ],
-        ),
+            ],
+          )
+        ]),
       ),
     );
   }
