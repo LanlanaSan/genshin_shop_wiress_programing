@@ -1,5 +1,7 @@
+import 'package:authentification_test/model/category.dart';
 import 'package:authentification_test/model/productInfo.dart';
 import 'package:authentification_test/model/productState.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class productScreen extends StatefulWidget {
@@ -14,26 +16,58 @@ class _productScreenState extends State<productScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: ListView.builder(
-          padding: EdgeInsets.all(15.0),
-          itemCount: Product.samples.length,
-          itemBuilder: (BuildContext context, int index) {
-            return GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return ProductDetail(product: Product.samples[index]);
-                    },
-                  ),
+          child: Column(
+        children: <Widget>[
+          Category(),
+          Padding(
+            padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+            child: Container(
+              width: 400,
+              height: 30,
+              decoration: new BoxDecoration(color: Colors.blue),
+              padding: EdgeInsets.fromLTRB(10, 1, 10, 0),
+              child: Text(
+                'All products',
+                style: TextStyle(
+                  fontFamily: 'Lexend Deca',
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ),
+          Flexible(
+            child: GridView.builder(
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              padding: EdgeInsets.all(15.0),
+              itemCount: Product.samples.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 8,
+                crossAxisSpacing: 3,
+                childAspectRatio: 0.44,
+              ),
+              itemBuilder: (BuildContext context, int index) {
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return ProductDetail(product: Product.samples[index]);
+                        },
+                      ),
+                    );
+                  },
+                  child: buildRecipeCard(Product.samples[index]),
                 );
               },
-              child: buildRecipeCard(Product.samples[index]),
-            );
-          },
-        ),
-      ),
+            ),
+          ),
+        ],
+      )),
     );
   }
 
@@ -48,15 +82,15 @@ class _productScreenState extends State<productScreen> {
           Image(
               image: AssetImage(product.Product_Img),
               fit: BoxFit.cover,
-              height: 200,
-              width: 200),
+              height: 150,
+              width: 150),
           const SizedBox(
             height: 14.0,
           ),
           Text(
             product.Product_Name,
             style: const TextStyle(
-              fontSize: 20.0,
+              fontSize: 20,
               fontWeight: FontWeight.bold,
               fontFamily: 'Lexend Deca',
             ),
@@ -64,6 +98,18 @@ class _productScreenState extends State<productScreen> {
           Column(
             mainAxisSize: MainAxisSize.max,
             children: [
+              const SizedBox(
+                height: 14.0,
+              ),
+              Text(
+                '\฿' + '${product.Product_Price}',
+                style: TextStyle(
+                  fontFamily: 'Lexend Deca',
+                  color: Color(0xFF4B39EF),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 5),
                 ////////////////ADD TO CART BUTTON//////////////

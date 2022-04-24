@@ -113,6 +113,10 @@ class _ProductDetailState extends State<ProductDetail> {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 14.0,
+              child: Divider(color: Colors.grey),
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
