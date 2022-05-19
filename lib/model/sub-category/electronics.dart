@@ -1,77 +1,54 @@
-import 'package:authentification_test/model/category.dart';
+import 'package:authentification_test/model/productInfo/electronicInfo.dart';
 import 'package:authentification_test/model/productInfo/productInfo.dart';
 import 'package:authentification_test/model/productState.dart';
 import 'package:flutter/material.dart';
 
-class productScreen extends StatefulWidget {
-  const productScreen({Key? key}) : super(key: key);
+class Electronics extends StatefulWidget {
+  const Electronics({Key? key}) : super(key: key);
 
   @override
-  State<productScreen> createState() => _productScreenState();
+  _Electronics createState() => _Electronics();
 }
 
-class _productScreenState extends State<productScreen> {
+class _Electronics extends State<Electronics> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: Column(
-        children: <Widget>[
-          Category(),
-          Padding(
-            padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
-            child: Container(
-              width: 400,
-              height: 30,
-              decoration: new BoxDecoration(color: Colors.blue),
-              padding: EdgeInsets.fromLTRB(10, 1, 10, 0),
-              child: Text(
-                'All products',
-                style: TextStyle(
-                  fontFamily: 'Lexend Deca',
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-          ),
-          Flexible(
-            child: GridView.builder(
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              padding: EdgeInsets.all(15.0),
-              itemCount: Product.samples.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 8,
-                crossAxisSpacing: 3,
-                childAspectRatio: 0.44,
-              ),
-              itemBuilder: (BuildContext context, int index) {
-                return GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return ProductDetail(product: Product.samples[index]);
-                        },
-                      ),
-                    );
+      appBar: AppBar(
+        title: const Text('Gaming'),
+      ),
+      body: GridView.builder(
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        padding: EdgeInsets.all(15.0),
+        itemCount: Elec.samples.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 8,
+          crossAxisSpacing: 3,
+          childAspectRatio: 0.44,
+        ),
+        itemBuilder: (BuildContext context, int index) {
+          var elec = Elec.samples[index];
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ProductDetail(product: Product.samples[14]);
                   },
-                  child: buildRecipeCard(Product.samples[index]),
-                );
-              },
-            ),
-          ),
-        ],
-      )),
+                ),
+              );
+            },
+            child: buildSCard(Elec.samples[index]),
+          );
+        },
+      ),
     );
   }
 
-//buildRecipeCard()
-  Widget buildRecipeCard(Product product) {
+  Widget buildSCard(Elec elec) {
     return Card(
       elevation: 2.0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
@@ -79,7 +56,7 @@ class _productScreenState extends State<productScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(children: <Widget>[
           Image(
-              image: AssetImage(product.Product_Img),
+              image: AssetImage(elec.Product_Img),
               fit: BoxFit.cover,
               height: 150,
               width: 150),
@@ -87,7 +64,7 @@ class _productScreenState extends State<productScreen> {
             height: 14.0,
           ),
           Text(
-            product.Product_Name,
+            elec.Product_Name,
             style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -101,7 +78,7 @@ class _productScreenState extends State<productScreen> {
                 height: 14.0,
               ),
               Text(
-                '\฿' + '${product.Product_Price}',
+                '\฿' + '${elec.Product_Price}',
                 style: TextStyle(
                   fontFamily: 'Lexend Deca',
                   color: Color(0xFF4B39EF),

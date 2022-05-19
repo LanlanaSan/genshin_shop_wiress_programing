@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:authentification_test/model/productInfo.dart';
+import 'package:authentification_test/model/productInfo/productInfo.dart';
 
 class ProductDetail extends StatefulWidget {
   final Product product;
@@ -16,7 +16,7 @@ class ProductDetail extends StatefulWidget {
 }
 
 class _ProductDetailState extends State<ProductDetail> {
-  int _sliderVal = 1;
+  //int _sliderVal = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -97,10 +97,11 @@ class _ProductDetailState extends State<ProductDetail> {
                             fontWeight: FontWeight.bold),
                       ),
                     ),
+                    Spacer(),
                     Expanded(
                       child: Text(
                         '\฿' + '${widget.product.Product_Price}',
-                        textAlign: TextAlign.end,
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'Lexend Deca',
                           color: Color(0xFF4B39EF),

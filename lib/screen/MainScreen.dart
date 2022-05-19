@@ -21,7 +21,6 @@ class ProductScreen extends StatelessWidget {
             title: const Text('GENSHIN shop'),
 
             //second part of appbar
-            //backgroundColor: Colors.white,
             centerTitle: true,
             bottom: const TabBar(
               tabs: [

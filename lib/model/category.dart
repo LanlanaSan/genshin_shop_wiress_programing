@@ -1,3 +1,9 @@
+import 'package:authentification_test/model/sub-category/accessories.dart';
+import 'package:authentification_test/model/sub-category/electronics.dart';
+import 'package:authentification_test/model/sub-category/household.dart';
+import 'package:authentification_test/model/sub-category/keychain.dart';
+import 'package:authentification_test/model/sub-category/plushies.dart';
+import 'package:authentification_test/model/sub-category/standees.dart';
 import 'package:flutter/material.dart';
 
 class Category extends StatelessWidget {
@@ -25,10 +31,19 @@ class Category extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 0, 1, 0),
-                    child: Icon(
-                      Icons.shopping_bag,
-                      color: Colors.white,
-                      size: 32,
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.shopping_bag,
+                        color: Colors.white,
+                        size: 32,
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => Accessories(),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ),
@@ -61,10 +76,19 @@ class Category extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 0, 1, 0),
-                    child: Icon(
-                      Icons.accessibility_new,
-                      color: Colors.white,
-                      size: 32,
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.accessibility_new,
+                        color: Colors.white,
+                        size: 32,
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => Standees(),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ),
@@ -97,10 +121,19 @@ class Category extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 0, 1, 0),
-                    child: Icon(
-                      Icons.smart_toy,
-                      color: Colors.white,
-                      size: 32,
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.smart_toy,
+                        color: Colors.white,
+                        size: 32,
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => Plushies(),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ),
@@ -133,17 +166,26 @@ class Category extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 0, 1, 0),
-                    child: Icon(
-                      Icons.sports_esports,
-                      color: Colors.white,
-                      size: 32,
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.sports_esports,
+                        color: Colors.white,
+                        size: 32,
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => Electronics(),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                   child: Text(
-                    'electronics',
+                    'gaming',
                     style: TextStyle(
                       fontFamily: 'Lexend Deca',
                       color: Color(0xFF8B97A2),
@@ -169,10 +211,19 @@ class Category extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 0, 1, 0),
-                    child: Icon(
-                      Icons.meeting_room,
-                      color: Colors.white,
-                      size: 32,
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.meeting_room,
+                        color: Colors.white,
+                        size: 32,
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => Household(),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ),
@@ -205,10 +256,19 @@ class Category extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 0, 1, 0),
-                    child: Icon(
-                      Icons.assistant,
-                      color: Colors.white,
-                      size: 32,
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.assistant,
+                        color: Colors.white,
+                        size: 32,
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => Keychains(),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ),

@@ -39,6 +39,11 @@ dependencies:
   firebase_auth: ^3.3.7
   fluttertoast: ^8.0.8
   cloud_firestore: ^3.1.13
+  geocoder2: ^1.1.0
+  google_maps_flutter: ^2.0.3
+  geocoding: ^2.0.4
+  geolocator: ^8.2.0
+  flutter_credit_card: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -74,9 +79,29 @@ flutter:
      - assets/Bard_feather.jpg
      - assets/RaidenShogunStandee.jpg
      - assets/FinalHourRing.jpg
-     - assets/DilucLetter.jpg
      - assets/KujouSara.jpg
      - assets/kokomi.jpg
+     - assets/AyakaStandee.jpg
+     - assets/SayuStandee.jpg
+     - assets/dodocoPlush.jpg
+     - assets/dragonPlush.jpg
+     - assets/PillarPlush.jpg
+     - assets/hutaoPlush.jpg
+     - assets/guobaPlush.jpg
+     - assets/chongyunPlush.jpg
+     - assets/hutaokey.jpg
+     - assets/Raidenmousepad.jpg
+     - assets/gchair.jpg
+     - assets/mouse.jpg
+     - assets/hutaoPad.jpg
+     - assets/zhonglibottle.jpg
+     - assets/guobaPot.jpg
+     - assets/beidoulamp.jpg
+     - assets/eulalamp.jpg
+     - assets/vk.jpg
+     - assets/ghp.jpg
+     - assets/GGmap.jpg
+     - assets/creditcart.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
